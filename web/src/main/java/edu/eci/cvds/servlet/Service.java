@@ -53,7 +53,6 @@ public class Service {
 		
 		return stringBuilder.append("</table>").toString();
 
-		
 	}	 
 
 }
