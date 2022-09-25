@@ -58,6 +58,31 @@ public class OtherServlet  extends SampleServlet{
 		}
 	}
 	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try {
+			int idLista = Integer.parseInt(req.getParameter("id")); 
+			Todo t = Service.getTodo(idLista);
+			if(!(t==null)) {
+				todaLaLista.add(t);
+				writeTable(resp);
+			}else {
+				writeNotFound(resp);
+			}
+			
+		}catch(MalformedURLException me) {
+			writeInternalServerError(resp);
+			
+		}catch(IOException ie) {
+			writeNotFound(resp);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+			writeBadRequest(resp);
+			
+		}
+	}
+	
 	private void writeTable(HttpServletResponse resp)throws IOException {
 		resp.setStatus(HttpServletResponse.SC_OK);
 		resp.getWriter().write(Service.todosToHTMLTable(todaLaLista));		

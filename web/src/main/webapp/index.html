@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+        function validateForm() {
+        	var x = document.getElementById("id").value;
+        	if (isNaN(x)) {
+        		alert("La identificacion debe ser un valor numerico");
+        		return false;
+        	}else if (x < 0) {
+        		alert("La identificacion no es valida, Vuelva a intentar");
+        		return false;
+        	}
+        	return true;
+        }
+        </script>
+    </head>
+    <body>
+        <h1>Laboratorio 5 Parte III</h1>
+        <form method="get" action="otherServlet" onsubmit="return validateForm()">
+        <label for="id">Digite su Id:</label>
+        <input type="text" id="id" name="id" required><br><br>
+        <button type="submit" >Enviar</button>
+        </form>
+    </body>
+</html>
+
