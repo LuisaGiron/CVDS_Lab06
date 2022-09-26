@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core">
+	  
+<h:head> 
+</h:head>
+
+<h:body>
+	<h:form id="guess_form">
+		<h1>Adivina el numero</h1>
+		<p>Ingrese un numero del 1 al 20</p>
+		<p:inputText id="numero" binding="#{numero}">
+		</p:inputText>
+		<br></br>
+		<br></br>
+		<p:commandButton value="Adivinar" actionListener="#{guessBean.guess(numero.value)}" update="guess_form"></p:commandButton>
+		
+		<p:commandButton value="Reiniciar" actionListener="#{guessBean.restart}" update="guess_form"></p:commandButton>
+		<br></br>
+		<h3></h3>		
+		<p:outputLabel value="Numero de intentos realizados: #{guessBean.getNumIntento()}"></p:outputLabel>
+		<br></br>
+		<p:outputLabel value="Estado del juego: #{guessBean.getEstadoJuego()}"></p:outputLabel>
+		<br></br>
+		<p:outputLabel value="Dinero acumulado: #{guessBean.getPremio()}"></p:outputLabel>
+		<br></br>
+		<br></br>
+		<p:outputLabel value="Numeros que ya intento: #{guessBean.getNumIntentados()}"></p:outputLabel>
+		<br></br>
+		<br></br>
+		<p:outputLabel value="Numero que se debe adivinar:"></p:outputLabel>
+		<p:outputLabel value="#{guessBean.getNumAdivinar()}" style="display: none;"></p:outputLabel>
+		<br></br>
+		<br></br>
+		
+	</h:form>
+</h:body>
+</html>
+
+
