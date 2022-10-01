@@ -7,7 +7,7 @@ Solucion Laboratorio 6
 ## Aplicacion
 [Herokuapp](https://lab-cvds.herokuapp.com/)
 
-##Integrantes
+## Integrantes
 
 - Luisa Bermudez
 - Daniela Ladino
