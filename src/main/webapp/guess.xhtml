@@ -6,37 +6,51 @@
 	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:f="http://java.sun.com/jsf/core">
 	  
-<h:head> 
+<h:head>
+	<link rel="stylesheet" href="diseno.css"></link>
 </h:head>
 
 <h:body>
 	<h:form id="guess_form">
-		<h1>Adivina el numero</h1>
-		<p>Ingrese un numero del 1 al 20</p>
-		<p:inputText id="numero" binding="#{numero}">
-		</p:inputText>
-		<br></br>
-		<br></br>
-		<p:commandButton value="Adivinar" actionListener="#{guessBean.guess(numero.value)}" update="guess_form"></p:commandButton>
-		
-		<p:commandButton value="Reiniciar" actionListener="#{guessBean.restart}" update="guess_form"></p:commandButton>
-		<br></br>
-		<h3></h3>		
-		<p:outputLabel value="Numero de intentos realizados: #{guessBean.getNumIntento()}"></p:outputLabel>
-		<br></br>
-		<p:outputLabel value="Estado del juego: #{guessBean.getEstadoJuego()}"></p:outputLabel>
-		<br></br>
-		<p:outputLabel value="Dinero acumulado: #{guessBean.getPremio()}"></p:outputLabel>
-		<br></br>
-		<br></br>
-		<p:outputLabel value="Numeros que ya intento: #{guessBean.getNumIntentados()}"></p:outputLabel>
-		<br></br>
-		<br></br>
-		<p:outputLabel value="Numero que se debe adivinar:"></p:outputLabel>
-		<p:outputLabel value="#{guessBean.getNumAdivinar()}" style="display: none;"></p:outputLabel>
-		<br></br>
-		<br></br>
-		
+		<div class="center">
+			<div class="titulo">
+				<h1>Adivina el numero</h1>
+			</div>
+			<div class="numero">
+				<strong>
+				<p>Ingrese un numero del 1 al 20</p>
+				</strong>
+				<br></br>
+			</div>
+			<p:inputText id="numero" binding="#{numero}">
+			</p:inputText>
+			<br></br>
+			<br></br>
+			<div class="adivinar">
+				<p:commandButton value="Adivinar" actionListener="#{guessBean.guess(numero.value)}" update="guess_form"></p:commandButton>
+			</div>
+			<p:commandButton value="Reiniciar" actionListener="#{guessBean.restart}" update="guess_form"></p:commandButton>
+			<br></br>
+			<br></br>
+			<br></br>
+			<h3></h3>	
+			<div class="leftText">
+				<p:outputLabel value="Numero de intentos realizados: #{guessBean.getNumIntento()}"></p:outputLabel>
+				<br></br>
+				<p:outputLabel value="Estado del juego: #{guessBean.getEstadoJuego()}"></p:outputLabel>
+				<br></br>
+				<p:outputLabel value="Dinero acumulado: #{guessBean.getPremio()}"></p:outputLabel>
+				<br></br>
+				<br></br>
+				<p:outputLabel value="Numeros que ya intento: #{guessBean.getNumIntentados()}"></p:outputLabel>
+				<br></br>
+				<br></br>
+				<p:outputLabel value="Numero que se debe adivinar:"></p:outputLabel>
+				<p:outputLabel value="#{guessBean.getNumAdivinar()}" style="display: none;"></p:outputLabel>
+				<br></br>
+				<br></br>
+			</div>
+		</div>
 	</h:form>
 </h:body>
 </html>

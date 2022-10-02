@@ -1,0 +1,29 @@
+body {
+	background-image: url("ninos.jpg");
+	height: 800px;
+}
+
+.center {
+	text-align: center;
+}
+
+.leftText {
+	text-align: left;
+	transform: translateX(45%);
+}
+
+.titulo {
+	color: #FD7F00;
+	font-size: xxx-large;
+	font-weight: bold;
+	font-family: Helvetica;
+	text-shadow: 0 1px 0 #000000, 0 2px 0 #000000, 0 3px 0 #000000, 0 4px 0 #000000, 0 5px 0 #000000, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+.numero {
+	font-size: x-large;
+}
+.adivinar {
+  width: 120px;
+  height: auto;
+  display: inline-block;
+}
